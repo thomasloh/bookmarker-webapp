@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="leafy" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- Typekit fonts -->
+    <script type="text/javascript" src="//use.typekit.net/vgy6rsu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@joshdmiller">
+    <meta name="twitter:title" content="leafy">
+    <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+    <meta name="twitter:creator" content="@joshdmiller">
+    <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
+    <meta property="og:title" content="leafy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://bit.ly/leafy" />
+    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+    <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+    <script type="text/javascript" charset="utf-8" async defer>
+
+    window.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("message", receiveMessage, false);
+
+        function receiveMessage(event)
+        {
+            if (event.data === 'location_hash') {
+                event.source.postMessage(window.location.hash, event.origin);
+            }
+        }
+
+    });
+
+
+    </script>
+
+  </head>
+  <body>
+
+    <div class="container" ui-view="main"></div>
+
+  </body>
+</html>

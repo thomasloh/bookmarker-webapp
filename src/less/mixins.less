@@ -1,0 +1,57 @@
+// CSS3 Transforms
+.transform (@string){
+  -webkit-transform: e(@string);
+  -moz-transform:    e(@string);
+  -ms-transform:     e(@string);
+  -o-transform:      e(@string);
+}
+
+.transform-style (@string) {
+  -webkit-transform-style : @string;
+  transform-style         : @string;
+}
+
+.backface-visibility (@string) {
+  -webkit-backface-visibility   : @string; /* Chrome and Safari */
+  -moz-backface-visibility      : @string; /* Firefox */
+  -ms-backface-visibility       : @string; /* Internet Explorer */
+  backface-visibility           : @string;
+}
+
+.perspective (@n) {
+  -webkit-perspective : @n; /* Safari and Chrome */
+  perspective         : @n;
+}
+
+.transition-multiple (@transition) {
+  -webkit-transition: e(@transition);
+  -moz-transition:    e(@transition);
+  -ms-transition:     e(@transition);
+  -o-transition:      e(@transition);
+}
+
+.transition (@transition, @t) when (isstring(@t)) {
+  -webkit-transition: ~`"-webkit-@{transition}"` e(@t);
+  -moz-transition:    ~`"-moz-@{transition}"` e(@t);
+  -ms-transition:     ~`"-ms-@{transition}"` e(@t);
+  -o-transition:      ~`"-o-@{transition}"` e(@t);
+}
+
+.placeholder-color-mixin (@color) {
+  &::-webkit-input-placeholder {
+     color: @color;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: @color;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: @color;
+  }
+
+  &:-ms-input-placeholder {
+     color: @color;
+  }
+}
+
