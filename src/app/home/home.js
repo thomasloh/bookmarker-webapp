@@ -50,8 +50,49 @@ angular.module( 'leafy.home', [
 .directive('activateTooltip', function() {
 
   return function(scope, element, attrs) {
+
     $(element).tooltip({
       placement: attrs["tooltipPlacement"]
+    });
+  };
+
+})
+
+.directive('activateTimerTooltip', function(_) {
+
+  return function(scope, element, attrs) {
+    var current = attrs['start'];
+    var metric  = attrs['metric'];
+    scope.$watch(attrs["notifier"], function(newValue, oldValue) {
+      if (!newValue) {
+        return;
+      }
+      current = newValue;
+      switch(true) {
+        case (current === 1):
+          $(element)
+          .removeClass('up problem')
+          .addClass('down');
+          break;
+        // case (current < 270):
+        //   $(element)
+        //   .removeClass('up down')
+        //   .addClass('problem');
+        //   break;
+      }
+      $(element).tooltip('show');
+      $(element).css('opacity', 1);
+      _.delay(function() {
+        $(element).tooltip('hide');
+        $(element).css('opacity', 0.4);
+      }, 2000);
+    });
+
+    $(element).tooltip({
+      placement: attrs["tooltipPlacement"],
+      title: function() {
+        return current + ' ' + metric;
+      }
     });
   };
 
@@ -136,7 +177,6 @@ angular.module( 'leafy.home', [
           'user'       : current_user
         });
       }
-
 
       // Apply color weight based on count
       function generate_color_weights_by_sc(target_collection) {

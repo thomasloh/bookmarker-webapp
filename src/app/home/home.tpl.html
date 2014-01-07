@@ -39,7 +39,9 @@
       <!-- <a ng-click="predicate = ''; reverse = undefined;">Reset</a> -->
       <!-- <i class="icon-iconmonstr-refresh-3-icon reset" ng-click="predicate = ''; reverse = undefined;"></i> -->
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-2">
     </div>
   </div>
 
@@ -61,7 +63,7 @@
       <i class="pull-right delete icon-iconmonstr-minus-5-icon" ng-click="destroy($index)" data-toggle="tooltip" data-original-title="delete" activate-tooltip tooltip-placement="left"></i>
     </div>
 
-    <div class="col-md-10 link-wrapper">
+    <div class="col-md-9 link-wrapper">
       <img src="https://www.google.com/s2/favicons?domain={{ user_bookmark.host }}" alt="link-favicon">
       <a class="link" href="{{ user_bookmark.url }}" target="_blank" ng-click="opened($index)">
         {{ user_bookmark.title }}
@@ -70,8 +72,8 @@
         ({{ user_bookmark.host }})
       </span>
     </div>
-    <div class="col-md-1">
-      <span class="status" data-toggle="tooltip" data-original-title="23 hours" activate-tooltip tooltip-placement="right"></span>
+    <div class="col-md-2">
+      <span class="status" data-toggle="tooltip" activate-timer-tooltip tooltip-placement="right" notifier="x" start="{{ start }}" metric="{{ chosen_metric }}"></span>
     </div>
 
   </div>
