@@ -67,6 +67,8 @@
         };
       }
 
+      // TODO: schedule timer for removal of the view
+
       // every x seconds
       for (var i = difference; i > 0; i--) {
 

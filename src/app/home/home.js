@@ -67,6 +67,9 @@ angular.module( 'leafy.home', [
       if (!newValue) {
         return;
       }
+      if (!oldValue) {
+        return;
+      }
       current = newValue;
       switch(true) {
         case (current === 1):
