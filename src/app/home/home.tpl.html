@@ -68,11 +68,11 @@
       <a class="link" href="{{ user_bookmark.url }}" target="_blank" ng-click="opened($index)">
         {{ user_bookmark.title }}
       </a>
-      <span class="host">
+      <span class="host" ng-hide="true">
         ({{ user_bookmark.host }})
       </span>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2" ng-hide="true">
       <span class="status" data-toggle="tooltip" activate-timer-tooltip tooltip-placement="right" notifier="x" start="{{ start }}" metric="{{ chosen_metric }}"></span>
     </div>
 
