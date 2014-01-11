@@ -103,7 +103,7 @@
       current_user = user;
     });
 
-    init_bookmark_life_timer();
+    // init_bookmark_life_timer();
 
     // Scope
     _.extend($scope, {

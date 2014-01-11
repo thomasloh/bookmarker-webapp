@@ -24,7 +24,7 @@ angular.module( 'services.leafy.user',
       url     : prefix + 'users/:uid/bookmarks/:bid/ '
     }
     'openBookmark': {
-      method  : 'PATCH'
+      method  : 'DELETE'
       url     : prefix + 'users/:uid/bookmarks/:bid/ '
     }
     'updateSocialData': {

@@ -20,7 +20,8 @@ angular.module( 'services.leafySocket', [])
 
   {
     init: () ->
-      socket = io.connect('http://localhost:8005')
+      socket = io.connect('http://useleafy.com')
+      # socket = io.connect('http://localhost:8005')
 
     get: () ->
       socket

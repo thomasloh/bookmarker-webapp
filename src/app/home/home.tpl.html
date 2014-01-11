@@ -35,13 +35,13 @@
       <i class="glyphicon glyphicon-chevron-up sorter" ng-show="predicate == 'twitter.current.count' && !reverse" ng-hide="predicate != 'twitter.current.count' || (predicate == 'twitter.current.count' && reverse) || reverse === undefined"></i>
     </div>
  -->
-    <div class="col-md-1 social">
+    <!-- <div class="col-md-1 social"> -->
       <!-- <a ng-click="predicate = ''; reverse = undefined;">Reset</a> -->
       <!-- <i class="icon-iconmonstr-refresh-3-icon reset" ng-click="predicate = ''; reverse = undefined;"></i> -->
+    <!-- </div> -->
+    <div class="col-md-11">
     </div>
-    <div class="col-md-9">
-    </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
     </div>
   </div>
 
@@ -58,24 +58,24 @@
       <social-count watch="user_bookmark.twitter" url="{{ user_bookmark.url }}" metric="count" weight="user_bookmark.twitter_color_weight">
       </social-count>
     </div>
- -->
-    <div class="col-md-1">
-      <i class="pull-right delete icon-iconmonstr-minus-5-icon" ng-click="destroy($index)" data-toggle="tooltip" data-original-title="delete" activate-tooltip tooltip-placement="left"></i>
-    </div>
 
-    <div class="col-md-9 link-wrapper">
+ -->    <div class="col-md-11 link-wrapper">
       <img src="https://www.google.com/s2/favicons?domain={{ user_bookmark.host }}" alt="link-favicon">
       <a class="link" href="{{ user_bookmark.url }}" target="_blank" ng-click="opened($index)">
         {{ user_bookmark.title }}
       </a>
-      <span class="host" ng-hide="true">
+<!--       <span class="host" ng-hide="true">
         ({{ user_bookmark.host }})
       </span>
+ -->
     </div>
-    <div class="col-md-2" ng-hide="true">
+<!--     <div class="col-md-2" ng-hide="true">
       <span class="status" data-toggle="tooltip" activate-timer-tooltip tooltip-placement="right" notifier="x" start="{{ start }}" metric="{{ chosen_metric }}"></span>
     </div>
-
+ -->
+    <div class="col-md-1">
+      <i class="pull-right delete icon-iconmonstr-minus-5-icon" ng-click="destroy($index)" data-toggle="tooltip" data-original-title="delete" activate-tooltip tooltip-placement="right"></i>
+    </div>
   </div>
 
 </div>
